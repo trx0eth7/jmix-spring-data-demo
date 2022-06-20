@@ -104,3 +104,4 @@ gradle-app.setting
 
 # Jmix (Cuba)
 .idea/**/cuba-project.xml
+jmix-studio.xml

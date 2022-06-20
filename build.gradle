@@ -13,6 +13,14 @@ jmix {
 group = 'ru.trx.jmix.spring.data'
 version = '0.0.1-SNAPSHOT'
 
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -35,6 +43,9 @@ dependencies {
     implementation 'io.jmix.datatools:jmix-datatools-ui-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     runtimeOnly 'org.hsqldb:hsqldb'
 
