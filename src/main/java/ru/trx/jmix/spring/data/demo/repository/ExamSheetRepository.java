@@ -12,7 +12,6 @@ import java.util.UUID;
 /**
  * @author Alexander Vasiliev
  */
-//@ApplyConstraints(false)
 public interface ExamSheetRepository extends JmixDataRepository<ExamSheet, UUID> {
 
     List<ExamSheet> findAllByNameContainingIgnoreCase(String name);

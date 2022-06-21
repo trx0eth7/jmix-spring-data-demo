@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="jsdd">
+        <createTable tableName="JSDD_TEACHER_SIGN">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true"
+                             primaryKeyName="PK_JSDD_TEACHER_SIGN"/>
+            </column>
+            <column name="EXAM_SHEET_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TEAHCER_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SIGN_CREATED_DATE" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="jsdd">
+        <addForeignKeyConstraint baseColumnNames="TEAHCER_ID" baseTableName="JSDD_TEACHER_SIGN"
+                                 constraintName="FK_JSDDTEACHERSIGN_ON_TEAHCER"
+                                 referencedColumnNames="ID" referencedTableName="JSDD_TEACHER"/>
+    </changeSet>
+    <changeSet id="3" author="jsdd">
+        <addForeignKeyConstraint baseColumnNames="EXAM_SHEET_ID" baseTableName="JSDD_TEACHER_SIGN"
+                                 constraintName="FK_JSDDTEACHERSIG_ON_EXAMSHEET"
+                                 referencedColumnNames="ID" referencedTableName="JSDD_EXAM_SHEET"/>
+    </changeSet>
+</databaseChangeLog>

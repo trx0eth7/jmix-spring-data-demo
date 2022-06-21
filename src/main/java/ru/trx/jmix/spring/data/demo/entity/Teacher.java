@@ -6,6 +6,7 @@ import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -19,6 +20,7 @@ import java.util.UUID;
 @Entity(name = "jsdd_Teacher")
 @Getter
 @Setter
+@NoArgsConstructor
 @EqualsAndHashCode
 public class Teacher {
 
